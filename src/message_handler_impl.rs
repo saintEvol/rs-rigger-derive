@@ -96,7 +96,7 @@ fn gen_handle_block(impl_item: &ItemImpl, items: &Vec<ImplItem>) -> MessageHandl
 }
 
 fn gen_one_question(st: &Box<Type>, m: &ImplItemMethod) -> TokenStream {
-    #[doc]
+    // #[doc]
     /* 消息处理函数的参数列表可能的情况：
     1. &[mut] self, MsgType, Sender
     2. &[mut], MsgType,
@@ -126,7 +126,7 @@ fn gen_one_question(st: &Box<Type>, m: &ImplItemMethod) -> TokenStream {
 }
 
 fn gen_one_tell(st: &Box<Type>, m: &ImplItemMethod) -> TokenStream {
-    #[doc]
+    // #[doc]
     /* 消息处理函数的参数列表可能的情况：
     1. &[mut] self, MsgType, RefAddr
     2. &[mut], MsgType,
