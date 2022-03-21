@@ -9,7 +9,7 @@ pub(crate) mod message_handler_impl;
 
 #[proc_macro_attribute]
 pub fn message_block(_attr: TokenStream, item: TokenStream) -> TokenStream {
-    let mut item = parse_macro_input!(item as ItemImpl);
+    let item = parse_macro_input!(item as ItemImpl);
     let t = item.self_ty.clone();
     let all = item.items.clone();
 
@@ -101,13 +101,13 @@ pub fn question(_args: TokenStream, input: TokenStream) -> TokenStream {
 }
 
 #[proc_macro_attribute]
-pub fn tell(args: TokenStream, input: TokenStream) -> TokenStream {
+pub fn tell(_args: TokenStream, input: TokenStream) -> TokenStream {
 
     proc_macro::TokenStream::from(input)
 }
 
 #[proc_macro_attribute]
-pub fn broadcast(args: TokenStream, input: TokenStream) -> TokenStream {
+pub fn broadcast(_args: TokenStream, input: TokenStream) -> TokenStream {
 
     proc_macro::TokenStream::from(input)
 }
